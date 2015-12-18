@@ -1,4 +1,4 @@
-ModPE.overrideTexture('images/mob/drone.png', 'http://i.imgur.com/eaNvvVE.png');
+
 var droneRenderType = Renderer.createHumanoidRenderer();
 adddroneRenderType(droneRenderType);
 

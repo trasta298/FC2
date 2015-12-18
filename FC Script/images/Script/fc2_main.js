@@ -13,6 +13,8 @@ var loadedScripts =[
 	"version.js",
 	"var.js",
 	"main.js",
+	"mob/drone.js",
+	"mob/Engine_mob.js",
 	"bl_function/newLevel.js",
 	"bl_function/useItem.js",
 	"bl_function/explodeHook.js",
@@ -46,6 +48,7 @@ var loadedScripts =[
 	"fcBlock/Generator.js",
 	"fcBlock/IndustrialBlock.js",
 	"fcBlock/Marker.js",
+	"fcBlock/WoodEngine.js",
 	"fcItem/fcItem.js",
 	"fcItem/wrench.js",
 	"fcItem/Nickel.js",
@@ -69,7 +72,6 @@ var loadedScripts =[
 	"Energy/solar.js",
 	"Energy/Automatic.js",
 	"Energy/Generate.js",
-	"mob/drone.js",
 	"API/api.js",
 	"fc2_main.js",
 	"recipe.js",
@@ -200,23 +202,28 @@ function reloadscript(){
 	if(k){
 		loadaddon();
 		if(java.io.File(dir+fileScriptname).exists()){
-			var file = new java.io.File(dir+fileScriptname);
-			filewriter = new java.io.FileWriter(dir+fileScriptname,false);
-			filewriter.write(codescript);
-			filewriter.close();
-			net.zhuoweizhang.mcpelauncher.ScriptManager.reloadScript(file);
+			try{
+				var file = new java.io.File(dir+fileScriptname);
+				filewriter = new java.io.FileWriter(dir+fileScriptname,false);
+				filewriter.write(codescript);
+				filewriter.close();
+				net.zhuoweizhang.mcpelauncher.ScriptManager.reloadScript(file);
+			}catch(e){}
 		}
 		if(java.io.File(dir2+fileScriptname).exists()){
-			var file = new java.io.File(dir2+fileScriptname);
-			filewriter = new java.io.FileWriter(dir2+fileScriptname,false);
-			filewriter.write(codescript);
-			filewriter.close();
-			net.zhuoweizhang.mcpelauncher.ScriptManager.reloadScript(file);
+			try{
+				var file = new java.io.File(dir2+fileScriptname);
+				filewriter = new java.io.FileWriter(dir2+fileScriptname,false);
+				filewriter.write(codescript);
+				filewriter.close();
+				net.zhuoweizhang.mcpelauncher.ScriptManager.reloadScript(file);
+			}catch(e){}
 		}
 	}else{
 		print("no file scripts");
 	}
 }
+
 
 
 //reloadscript();

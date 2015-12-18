@@ -1,5 +1,5 @@
 function IndustrialBlock(){
-	this.id = 193;
+	this.id = 204;
 	this.name = "Industrial Block";
 	this.textures = [["electrolysis", 1]];
 	this.materialSourceIdSrc = 2;

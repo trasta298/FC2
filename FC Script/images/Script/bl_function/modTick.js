@@ -22,8 +22,11 @@ function modTick(){
 	modtick++;
 	if(setgrid){
 		Energy.setGrid();
+		MOB_BLOCK.checkMobBlock();
 		setgrid = false;
 	}
+	MOB_BLOCK.mobBlockModTick();
+	MOB_BLOCK.engineWork();
 	for(key in FC){
 		fctick(FC[key],key,modtick);
 	}

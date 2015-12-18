@@ -1,5 +1,6 @@
 function destroyBlock(x,y,z,side){
 	var blockId=getTile(x,y,z);
+	if(blockId==woodengine.id) MOB_BLOCK.removeMobBlock(x,y,z);
 	if(Ee.indexOf(getTile(x,y,z))!=-1)  setgrid = true;
 	if(blockId==191){
 		preventDefault();

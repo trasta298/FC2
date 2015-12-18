@@ -9,7 +9,7 @@ function fcBlock(){
 		}
 		if(this.lightLevel!=null) Block.setLightLevel(this.id,this.lightLevel);
 		if(this.colorArray!=null) Block.setColor(this.id,this.colorArray);
-		Item.setCategory(this.id, ItemCategory.TOOL);
+		Item.setCategory(this.id, ItemCategory.MATERIAL);
 		Block.setRenderLayer(this.id,this.layer);
 		Player.addItemCreativeInv(this.id,1,0);
 		Block.setLightOpacity(this.id,this.opa);

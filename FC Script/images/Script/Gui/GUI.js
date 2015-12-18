@@ -238,7 +238,6 @@ function cheakrecipe(id,dmg){
 
 
 
-
 GUI.menubutton=function(){
 	activity.runOnUiThread(new java.lang.Runnable({ 
 		run: function(){
@@ -248,7 +247,6 @@ GUI.menubutton=function(){
 			menubutton.setOnClickListener(new android.view.View.OnClickListener({
 				onClick: function(viewarg){
 					addonscroll();
-					//GUI.menubutton();
 				}
 			}));
 			gui.menu.setContentView(menubutton);
@@ -260,17 +258,19 @@ GUI.menubutton=function(){
 GUI.closemenuButton=function(){
 	activity.runOnUiThread(new java.lang.Runnable({ 
 		run: function(){
-			if(gui.menu){
-				gui.menu.dismiss();
-				gui = {};
-			}
+			try{
+				if(gui.menu){
+					gui.menu.dismiss();
+					gui = {};
+				}
+			}catch(e){}
 		}
 	}));
 }
 
 
 
-
+GUI.menubutton();
 
 
 function addonscroll(){
@@ -290,6 +290,7 @@ function addonscroll(){
 				button.setText("reload");
 				button.setOnClickListener(new android.view.View.OnClickListener({
 					onClick: function(viewarg){
+						GUI.closemenuButton();
 						reloadscript();
 						print("Update");
 					}
@@ -305,6 +306,3 @@ function addonscroll(){
 		}
 	}));
 }
-
-
-GUI.menubutton();

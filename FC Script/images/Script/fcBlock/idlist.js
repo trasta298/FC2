@@ -1,18 +1,20 @@
-Digitalminner 181
-GoldPipe 180
-Pipe 182
-Ponp 183
-Solar 176
-Wire 177
-Tin Ore 178
-Nickel Ore 179
-AutomaticCrafting 188
-Quartz Ore 189
-Copper Ore 190
-Apatite Ore 191
-Generator 192
-Industrial Block 193
-Marker 194
+Solar 176 solar
+Wire 177 wire
+Nickel Ore 179 nickelore
+GoldPipe 180 goldpipe
+Digitalminner 181 digitalminner
+Pipe 182 pipe
+AutomaticCrafting 188 automaticCrafting
+Quartz Ore 189 quartzore
+Copper Ore 190 copperore
+Apatite Ore 191 apatiteore
+Generator 192 generator
+Marker 194 marker
+Tin Ore 201 tinore
+Ponp 202 ponp
+WoodEngine 203 woodengine
+Industrial Block 204 industrialBlock
+
 Wrench 500
 Nickel Ingot 501
 Tin Ingot 502

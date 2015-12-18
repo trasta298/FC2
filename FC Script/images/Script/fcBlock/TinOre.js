@@ -1,5 +1,5 @@
 function Tinore(){
-	this.id = 178;
+	this.id = 201;
 	this.name = "Tin Ore";
 	this.textures = [["Tinore",0]];
 	this.materialSourceIdSrc = 0;
