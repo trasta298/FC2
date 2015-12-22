@@ -8,6 +8,7 @@ function Ponp(){
 	this.time = 0.3;
 	this.layer = 3;
 	this.opa = 0.1;
+	this.Shape = [[0.25,0.25,0.25,0.75,0.75,0.75,0]];
 	fcBlock.apply(this,arguments);
 }
 

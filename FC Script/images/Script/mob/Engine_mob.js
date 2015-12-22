@@ -129,11 +129,11 @@ var MOB_BLOCK=(function(){
 		this.renderer=MOBBLOCK_RENDERER[direction]; //レンダラーの配列が入る
 		this.texture=texture; //テクスチャ
 		this.dimension=Player.getDimension();
-		this.state=FC[this.x+","+this.y+","+this.z+","+Player.getDimension()].state; //ピストンの状態を表す [0~79]
-		this.speed=FC[this.x+","+this.y+","+this.z+","+Player.getDimension()].speed; //スピードが入る [0でストップ]
-		this.piston=FC[this.x+","+this.y+","+this.z+","+Player.getDimension()].piston; //ピストンの進行方向
+		this.state=FC[inkey(this.x,this.y,this.z,this.dimension)].state; //ピストンの状態を表す [0~79]
+		this.speed=FC[inkey(this.x,this.y,this.z,this.dimension)].speed; //スピードが入る [0でストップ]
+		this.piston=FC[inkey(this.x,this.y,this.z,this.dimension)].piston; //ピストンの進行方向
 		this.entity=entity; //エンティティ番号が入る
-		_engineSpeedChange(this.x,this.y,this.z,FC[this.x+","+this.y+","+this.z+","+Player.getDimension()].speed);
+		_engineSpeedChange(this.x,this.y,this.z,FC[inkey(this.x,this.y,this.z,this.dimension)].speed);
 	};
 	
 	//呼び出すとすべてのエンジンを進ませる

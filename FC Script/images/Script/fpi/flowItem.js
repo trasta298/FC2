@@ -5,18 +5,17 @@ var futureinpipe=[];
 
 function intoPipein(){
 	var s=0;
-	var bool=true;
-	while(bool){
+	while(true){
 		if(futureinpipe.length>s){
 			if(futureinpipe[s][6]==Player.getDimension()){
 				var entItem=Level.dropItem(futureinpipe[s][0]+0.5,futureinpipe[s][1]+0.5,futureinpipe[s][2]+0.5,s,futureinpipe[s][3],1,futureinpipe[s][4]);
 				var i = new Itemflow(entItem,futureinpipe[s][0],futureinpipe[s][1],futureinpipe[s][2],futureinpipe[s][5],futureinpipe[s][6],futureinpipe[s][3],futureinpipe[s][4]);
 				flowitem.push(i);
 				futureinpipe.splice(s,1);
-				bool=false;
+				break;
 			}
 		}else{
-			bool=false;
+			break;
 		}
 	}
 }
@@ -24,16 +23,17 @@ function intoPipein(){
 function flowItem_modTick(tick,x,y,z,d,ops){
 	if(ops.run==0){
 		var tt = false;
-		if(tick%ops.speed==0&&d==Player.getDimension()){
+		if(d==Player.getDimension()){
 			var side=[[x+1,y,z],[x,y+1,z],[x,y,z+1],[x,y,z-1],[x,y-1,z],[x-1,y,z]];
 			for(i=0;i<side.length;i++){
-				if(getTile(side[i][0],side[i][1],side[i][2])==54){
+				if(ops.el>0&&getTile(side[i][0],side[i][1],side[i][2])==54){
 					flowItem_into(side[i][0],side[i][1],side[i][2],x,y,z,5-i);
+					el--;
 					tt = true;
 				}
 			}
 			if(!tt){
-				/*なかったとき ドロップアイテム吸い込みはなしで*/
+				//なかったとき ドロップアイテム吸い込みはなしで
 			}
 		}
 	}

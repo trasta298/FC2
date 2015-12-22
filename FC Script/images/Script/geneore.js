@@ -11,7 +11,7 @@ function GenerationOre(px,pz,syc){
 	var dz = pz%16;
 	var wx=wz=0;
 	if(px>0) wx = px-dx;
-	else wx = pz-16-dx;
+	else wx = px-16-dx;
 	if(pz>0) wz = pz-dz;
 	else wz = pz-16-dz;
 	var co = Level.getData(wx,1,wz);

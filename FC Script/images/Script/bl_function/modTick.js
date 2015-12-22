@@ -4,6 +4,7 @@ var godid=0;
 
 function modTick(){
 	var d=Player.getDimension();
+	EL.init();
 	if(nowDid!=d&&godid==1){
 		nowDid=d;
 		godid=2;
@@ -16,7 +17,8 @@ function modTick(){
 			else entItem=0;
 			var v = new Itemflow(entItem,flowitem[i].x,flowitem[i].y,flowitem[i].z,flowitem[i].yaw,flowitem[i].dimension,flowitem[i].id,flowitem[i].data);
 			ff.push(v);
-		}flowitem=ff;
+		}
+		flowitem=ff;
 	}
 	if(godid==2&&nowDid==d) flowItem_place();
 	modtick++;

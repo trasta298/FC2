@@ -60,3 +60,8 @@ function debug(string,type){
 		case 2 : print("Debug  "+string);break;
 	}
 }
+
+function inkey(x,y,z,d){
+	var str=x+","+y+","+z+","+d;
+	return str;
+}

@@ -16,7 +16,7 @@ function useItem(x,y,z,i,b,s,iD,bD){
 	}
 	if(i==woodengine.id){
 		var h = SetEngine(x,y,z,i,s);
-		FC[h[0]+","+h[1]+","+h[2]+","+d]={
+		FC[inkey(h[0],h[1],h[2],d)]={
 			id:woodengine.id,max:1,fc:0,speed:0,state:0,piston:1
 		};
 		Level.spawnMob(h[0]+0.5,h[1],h[2]+0.5,15);
@@ -36,8 +36,18 @@ function useItem(x,y,z,i,b,s,iD,bD){
 		}
 	}else if(i==solar.id){
 		var h = Setmachine(x,y,z,i,s);
-		FC[h[0]+","+h[1]+","+h[2]+","+d]={
-			id:solar.id,max:1,fc:0,run:0,speed:20,i0:0,d0:0,c0:0,i1:0,d1:0,c1:0
+		FC[inkey(h[0],h[1],h[2],d)]={
+			id:solar.id,
+			max:1,
+			fc:0,
+			run:0,
+			speed:20,
+			i0:0,
+			d0:0,
+			c0:0,
+			i1:0,
+			d1:0,
+			c1:0
 		};
 		grid[h[0]+","+h[1]+","+h[2]+","+solar.id+","+d]=[[h[0],h[1],h[2],solar.id,d]];
 		setgrid = true;
@@ -45,14 +55,22 @@ function useItem(x,y,z,i,b,s,iD,bD){
 	
 	else if(i==ponp.id){
 		var h = Setmachine(x,y,z,i,s);
-		FC[h[0]+","+h[1]+","+h[2]+","+d] = {
-			id:ponp.id,run:0,speed:10
+		FC[inkey(h[0],h[1],h[2],d)]={
+			id:ponp.id,
+			run:0,
+			el:0
 		};
 	}
 	
 	else if(i==automaticCrafting.id){
 		var h = Setmachine(x,y,z,i,s);
-		FC[h[0]+","+h[1]+","+h[2]+","+d] = {id:automaticCrafting.id,i9:0,d9:0,c9:0,run:0};
+		FC[inkey(h[0],h[1],h[2],d)]={
+			id:automaticCrafting.id,
+			i9:0,
+			d9:0,
+			c9:0,
+			run:0
+		};
 	}
 	
 	else if(b==automaticCrafting.id){
@@ -63,13 +81,30 @@ function useItem(x,y,z,i,b,s,iD,bD){
 	
 	else if(i==digitalminner.id){
 		var h = Setmachine(x,y,z,i,s);
-		FC[h[0]+","+h[1]+","+h[2]+","+d] = {id:digitalminner.id,max:10000,fc:0,run:0};
+		FC[inkey(h[0],h[1],h[2],d)]={
+			id:digitalminner.id,
+			max:10000,
+			fc:0,
+			run:0
+		};
 		setgrid = true;
 	}
 	
 	else if(i==generator.id){
 		var h = Setmachine(x,y,z,i,s);
-		FC[h[0]+","+h[1]+","+h[2]+","+d] = {id:generator.id,max:1000,fc:0,run:0,fire:0,firemax:200,effect:1,speed:20,i0:0,d0:0,c0:0};
+		FC[inkey(h[0],h[1],h[2],d)]={
+			id:generator.id,
+			max:1000,
+			fc:0,
+			run:0,
+			fire:0,
+			firemax:200,
+			effect:1,
+			speed:20,
+			i0:0,
+			d0:0,
+			c0:0
+		};
 		grid[h[0]+","+h[1]+","+h[2]+","+generator.id+","+d]=[[h[0],h[1],h[2],generator.id,d]];
 		setgrid = true;
 	}
@@ -108,12 +143,12 @@ function api_useItem(x,y,z,i,b,s,iD,bD,d){
 	for(key in apidata){
 		if(i==apidata[key].id){
 			var h = Setmachine(x,y,z,i,s);
-			FC[h[0]+","+h[1]+","+h[2]+","+d] =  apidata[key].fcdata;
-			FC[h[0]+","+h[1]+","+h[2]+","+d].id=apidata[key].id;
+			FC[inkey(h[0],h[1],h[2],d)] = apidata[key].fcdata;
+			FC[inkey(h[0],h[1],h[2],d)].id=apidata[key].id;
 			if(apidata[key].ss) grid[h[0]+","+h[1]+","+h[2]+","+apidata[key].id+","+d]=[[h[0],h[1],h[2],apidata[key].id,d]];
 			setgrid = true;
 		}else if(b==apidata[key].id){
-			fcapi.ontouch[key](x,y,z,i,b,s,iD,bD,d,FC[x+","+y+","+z+","+d]);
+			fcapi.ontouch[key](x,y,z,i,b,s,iD,bD,d,FC[inkey(x,y,z,d)]);
 		}
 	}
 }
