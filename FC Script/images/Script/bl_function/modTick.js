@@ -4,7 +4,6 @@ var godid=0;
 
 function modTick(){
 	var d=Player.getDimension();
-	EL.init();
 	if(nowDid!=d&&godid==1){
 		nowDid=d;
 		godid=2;

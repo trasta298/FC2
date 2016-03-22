@@ -26,9 +26,8 @@ function flowItem_modTick(tick,x,y,z,d,ops){
 		if(d==Player.getDimension()){
 			var side=[[x+1,y,z],[x,y+1,z],[x,y,z+1],[x,y,z-1],[x,y-1,z],[x-1,y,z]];
 			for(i=0;i<side.length;i++){
-				if(ops.el>0&&getTile(side[i][0],side[i][1],side[i][2])==54){
+				if(getTile(side[i][0],side[i][1],side[i][2])==54){
 					flowItem_into(side[i][0],side[i][1],side[i][2],x,y,z,5-i);
-					el--;
 					tt = true;
 				}
 			}

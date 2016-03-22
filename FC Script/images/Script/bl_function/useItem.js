@@ -57,8 +57,7 @@ function useItem(x,y,z,i,b,s,iD,bD){
 		var h = Setmachine(x,y,z,i,s);
 		FC[inkey(h[0],h[1],h[2],d)]={
 			id:ponp.id,
-			run:0,
-			el:0
+			run:0
 		};
 	}
 	

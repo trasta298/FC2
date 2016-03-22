@@ -1,4 +1,4 @@
-var EL = (function(){
+/*var EL = (function(){
 	
 	function _init(){
 		for(key in FC){
@@ -14,4 +14,4 @@ var EL = (function(){
 		init : _init,
 		send : _send
 	};
-})();
+})();*/
